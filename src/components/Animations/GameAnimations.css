@@ -1,0 +1,120 @@
+.victory-overlay,
+.game-over-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.victory-text,
+.game-over-text {
+  position: absolute;
+  text-align: center;
+  color: white;
+  z-index: 1001;
+  animation: scaleIn 0.5s ease-out;
+}
+
+.victory-text h1 {
+  font-size: 4rem;
+  margin: 0;
+  text-shadow: 0 0 20px rgba(76, 175, 80, 0.5);
+  animation: glow 2s infinite;
+}
+
+.game-over-text h1 {
+  font-size: 4rem;
+  margin: 0;
+  text-shadow: 0 0 20px rgba(244, 67, 54, 0.5);
+  animation: glow 2s infinite;
+}
+
+.victory-text p,
+.game-over-text p {
+  font-size: 1.5rem;
+  margin: 20px 0;
+  opacity: 0.8;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+  }
+  50% {
+    text-shadow: 0 0 40px rgba(255, 255, 255, 0.8);
+  }
+  100% {
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+  }
+}
+
+/* Score change animation */
+.score-change {
+  position: absolute;
+  font-size: 1.2rem;
+  font-weight: bold;
+  animation: floatUp 1s ease-out forwards;
+  pointer-events: none;
+}
+
+.score-change.positive {
+  color: #4caf50;
+}
+
+.score-change.negative {
+  color: #f44336;
+}
+
+@keyframes floatUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .victory-text h1,
+  .game-over-text h1 {
+    font-size: 2.5rem;
+  }
+
+  .victory-text p,
+  .game-over-text p {
+    font-size: 1.2rem;
+  }
+}

@@ -1,0 +1,208 @@
+.decision-panel {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    color: white;
+  }
+  
+  .decision-panel h3 {
+    margin: 0 0 20px 0;
+    color: #81d4fa;
+    text-align: center;
+    font-size: 1.5rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  .current-status {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 30px;
+  }
+  
+  .status-item {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+  }
+  
+  .status-item label {
+    display: block;
+    margin-bottom: 10px;
+    color: rgba(255, 255, 255, 0.7);
+  }
+  
+  .status-item .value {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .value.negative {
+    color: #f44336;
+  }
+  
+  .payment-slider {
+    margin: 30px 0;
+  }
+  
+  .slider-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+  }
+  
+  .range-slider {
+    width: 100%;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+    outline: none;
+    -webkit-appearance: none;
+  }
+  
+  .range-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #2196f3;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .range-slider::-webkit-slider-thumb:hover {
+    transform: scale(1.2);
+    background: #1976d2;
+  }
+  
+  .slider-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.7);
+  }
+  
+  .impact-preview {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 15px;
+    margin: 20px 0;
+  }
+  
+  .impact-preview h4 {
+    margin: 0 0 15px 0;
+    color: #81d4fa;
+  }
+  
+  .impact-grid {
+    display: grid;
+    gap: 15px;
+  }
+  
+  .impact-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .impact-item label {
+    width: 120px;
+    font-size: 0.9rem;
+  }
+  
+  .utilization-bar {
+    flex-grow: 1;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  
+  .utilization-fill {
+    height: 100%;
+    transition: width 0.3s ease, background-color 0.3s ease;
+  }
+  
+  .bonus-alert {
+    margin-top: 15px;
+    padding: 10px;
+    background: rgba(76, 175, 80, 0.2);
+    border-radius: 8px;
+    color: #4caf50;
+    font-size: 0.9rem;
+    animation: pulse 2s infinite;
+  }
+  
+  .warning-message {
+    margin-top: 15px;
+    padding: 10px;
+    background: rgba(244, 67, 54, 0.2);
+    border-radius: 8px;
+    color: #f44336;
+    font-size: 0.9rem;
+    animation: pulse 2s infinite;
+  }
+  
+  .make-payment-button {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(45deg, #2196F3 30%, #21CBF3 90%);
+    border: none;
+    border-radius: 25px;
+    color: white;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 20px;
+    box-shadow: 0 3px 5px 2px rgba(33, 203, 243, .3);
+  }
+  
+  .make-payment-button:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px 2px rgba(33, 203, 243, .4);
+  }
+  
+  .make-payment-button:disabled {
+    background: #bbdefb;
+    cursor: not-allowed;
+  }
+  
+  @keyframes pulse {
+    0% { opacity: 0.6; }
+    50% { opacity: 1; }
+    100% { opacity: 0.6; }
+  }
+  
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .decision-panel {
+      padding: 20px;
+    }
+  
+    .current-status {
+      grid-template-columns: 1fr;
+      gap: 15px;
+    }
+  
+    .status-item .value {
+      font-size: 1.3rem;
+    }
+  
+    .impact-item {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+  
+    .impact-item label {
+      width: 100%;
+    }
+  }

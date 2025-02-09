@@ -1,0 +1,208 @@
+.game-tracker {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    margin-bottom: 30px;
+  }
+  
+  .tracker-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .score-display {
+    text-align: left;
+  }
+  
+  .score-display h2 {
+    margin: 0;
+    color: white;
+    font-size: 2rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  .score-category {
+    font-size: 1.2rem;
+    margin-top: 5px;
+    animation: fadeIn 0.5s ease-out;
+  }
+  
+  .score-category.excellent { color: #4caf50; }
+  .score-category.good { color: #8bc34a; }
+  .score-category.fair { color: #ffc107; }
+  .score-category.poor { color: #ff9800; }
+  .score-category.very-poor { color: #f44336; }
+  
+  .turn-display {
+    text-align: right;
+  }
+  
+  .month-counter {
+    font-size: 1.5rem;
+    color: white;
+    margin-bottom: 5px;
+  }
+  
+  .months-left {
+    font-size: 1rem;
+    color: #81d4fa;
+  }
+  
+  .game-ending {
+    color: #f44336;
+    font-weight: bold;
+    animation: pulse 2s infinite;
+  }
+  
+  .phase-tracker {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding: 20px 0;
+  }
+  
+  .phase-tracker::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-50%);
+  }
+  
+  .phase-indicator {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    z-index: 1;
+  }
+  
+  .phase-dot {
+    width: 20px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+  }
+  
+  .phase-indicator.active .phase-dot {
+    width: 30px;
+    height: 30px;
+    background: #2196f3;
+    box-shadow: 0 0 20px rgba(33, 150, 243, 0.5);
+    animation: pulse 2s infinite;
+  }
+  
+  .phase-label {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+    transition: all 0.3s ease;
+  }
+  
+  .phase-indicator.active .phase-label {
+    color: white;
+    font-weight: bold;
+  }
+  
+  .phase-description {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: max-content;
+    background: rgba(33, 150, 243, 0.2);
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    color: white;
+    margin-top: 10px;
+    animation: fadeIn 0.3s ease-out;
+  }
+  
+  .tracker-tips {
+    margin-top: 20px;
+    padding: 15px;
+    background: rgba(33, 150, 243, 0.1);
+    border-radius: 10px;
+  }
+  
+  .tip {
+    color: #81d4fa;
+    font-size: 0.9rem;
+    animation: slideIn 0.5s ease-out;
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.1);
+      opacity: 0.8;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .tracker-header {
+      flex-direction: column;
+      gap: 15px;
+      text-align: center;
+    }
+  
+    .score-display, .turn-display {
+      text-align: center;
+    }
+  
+    .phase-tracker {
+      flex-direction: column;
+      gap: 20px;
+    }
+  
+    .phase-tracker::before {
+      width: 2px;
+      height: 100%;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  
+    .phase-description {
+      position: relative;
+      transform: none;
+      left: 0;
+      width: 100%;
+      text-align: center;
+    }
+  }

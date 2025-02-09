@@ -1,0 +1,123 @@
+.dice-container {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 30px;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+  }
+  
+  .dice-container h3 {
+    color: #81d4fa;
+    margin: 0;
+    font-size: 1.4rem;
+    text-align: center;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  .dice-stage {
+    width: 200px;
+    height: 200px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .dice-result {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px 25px;
+    border-radius: 10px;
+    text-align: center;
+    animation: fadeIn 0.5s ease-out;
+  }
+  
+  .result-text {
+    margin: 0;
+    font-size: 1.2rem;
+    color: white;
+    font-weight: bold;
+  }
+  
+  .roll-button {
+    background: linear-gradient(45deg, #2196F3 30%, #21CBF3 90%);
+    border: none;
+    border-radius: 25px;
+    color: white;
+    padding: 12px 24px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    min-width: 150px;
+    box-shadow: 0 3px 5px 2px rgba(33, 203, 243, .3);
+  }
+  
+  .roll-button:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px 2px rgba(33, 203, 243, .4);
+  }
+  
+  .roll-button.disabled {
+    background: #bbdefb;
+    cursor: not-allowed;
+    transform: none;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  /* Rolling animation class */
+  .rolling {
+    animation: shake 0.5s infinite;
+  }
+  
+  @keyframes shake {
+    0% { transform: translate(0, 0) rotate(0deg); }
+    25% { transform: translate(5px, 5px) rotate(5deg); }
+    50% { transform: translate(0, 0) rotate(0deg); }
+    75% { transform: translate(-5px, 5px) rotate(-5deg); }
+    100% { transform: translate(0, 0) rotate(0deg); }
+  }
+  
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .dice-container {
+      padding: 20px;
+    }
+  
+    .dice-stage {
+      width: 150px;
+      height: 150px;
+    }
+  
+    .roll-button {
+      padding: 10px 20px;
+      font-size: 1rem;
+    }
+  }
